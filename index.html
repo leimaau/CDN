@@ -4,6 +4,36 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Leimaau’s CDN</title>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script type="text/javascript">
+		function getQueryVariable(variable)
+		{
+			   var query = window.location.search.substring(1);
+			   var vars = query.split("&");
+			   for (var i=0;i<vars.length;i++) {
+					   var pair = vars[i].split("=");
+					   if(pair[0] == variable){return pair[1];}
+			   }
+			   return(false);
+		}
+		
+		var linkaddr = 'https://cdn.jsdelivr.net/gh/leimaau/CDN@latest/data-store/' + getQueryVariable("value");
+		var linkaddr2 = 'https://leimaau.github.io/CDN/data-store/' + getQueryVariable("value");
+		
+		$.ajax({
+			type : "GET",
+			async: false,
+			url : linkaddr,
+			cache: false,
+			success : function(result) {
+				window.location.href = linkaddr;
+			},
+			error : function(e){
+				window.location.href = linkaddr2;
+			}
+		});
+		
+  </script>
 </head>
 <body>
 </body>
