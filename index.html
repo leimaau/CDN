@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Leimaau’s CDN</title>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
   <script type="text/javascript">
 		function getQueryVariable(variable)
 		{
@@ -17,7 +17,7 @@
 			   return(false);
 		}
 		
-		var linkaddr = 'https://cdn.jsdelivr.net/gh/leimaau/CDN@latest/data-store/' + getQueryVariable("value");
+		var linkaddr = 'https://fastly.jsdelivr.net/gh/leimaau/CDN@latest/data-store/' + getQueryVariable("value");
 		var linkaddr2 = 'https://leimaau.github.io/CDN/data-store/' + getQueryVariable("value");
 		
 		$.ajax({
